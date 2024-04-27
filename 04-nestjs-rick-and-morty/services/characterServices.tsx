@@ -9,7 +9,7 @@ interface Character{
   image: string,
 }
 
-export const getCharacters = async (): Promise<Character[]> => {
+export const getCharacters = async () => {
   const url = "https://rickandmortyapi.com/api/character";
   const response = await fetch(url);
   const responseParsed = await response.json();
@@ -27,7 +27,7 @@ export const getCharacters = async (): Promise<Character[]> => {
   return characters;
 };
 
-export const getCharacter = async (characterId: String): Promise<Character> => {
+export const getCharacter = async (characterId: String) => {
   const url = "https://rickandmortyapi.com/api/character/" + characterId.toString();
   const response = await fetch(url);
   const responseParsed = await response.json();
